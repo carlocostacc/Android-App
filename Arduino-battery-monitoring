@@ -1,3 +1,13 @@
+
+#include <ArduinoBLE.h>
+
+ // Bluetooth® Low Energy Battery Service
+BLEService batteryService("180F");
+
+// Bluetooth® Low Energy Battery Level Characteristic
+BLEUnsignedCharCharacteristic batteryLevelChar("2A19",  // standard 16-bit characteristic UUID
+    BLERead | BLENotify); // remote clients will be able to get notifications if this characteristic changes
+
 BLEService customService( ); // Custom service UUID
 
 BLECharacteristic customCharacteristic("0000dfb1-0000-1000-8000-00805f9b34fb", // Custom characteristic UUID
