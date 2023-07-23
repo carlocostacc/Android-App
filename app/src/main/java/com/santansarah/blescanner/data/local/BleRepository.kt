@@ -96,8 +96,7 @@ class BleRepository(
     suspend fun getMsDevice(
         byteArray: ByteArray
     ): String? {
-        // val msDeviceType = byteArray[1].toHex().toInt() keeps making the app crash
-        val msDeviceType = 1
+        val msDeviceType = byteArray[1].toHex().toInt()
         return getMicrosoftDeviceById(msDeviceType)?.name
     }
 
